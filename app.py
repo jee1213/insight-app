@@ -20,7 +20,7 @@ def recommender():
 @app.route('/return_grade', methods=['GET', 'POST'])
 def input_to_output_app():
 	import pickle
-	filename = 'RF_imbmodel.sav'
+	filename = 'RF_model_dep40.pickle'
 	loaded_model = pickle.load(open(filename, 'rb'))
 	font = ['5+','6A','6A+','6B','6B+','6C','6C+','7A','7A+','7B','7B+','7C','7C+','8A','8A+','8B','8B+']
 	vgrd = [2,3,3,4,4,5,5,6,7,8,8,9,10,11,12,13,14]
