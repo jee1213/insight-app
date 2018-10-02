@@ -20,7 +20,6 @@ def recommender():
 @app.route('/return_grade', methods=['GET', 'POST'])
 def input_to_output_app():
 	import pickle
-	import h2o
 	import numpy as np
 	#h2o.init(ip = "localhost", port =8080)
 	filename = 'RF_model_dep40.pickle'
