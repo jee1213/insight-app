@@ -25,6 +25,8 @@ def input_to_output_app():
 	#h2o.init(ip = "localhost", port =8080)
 	filename = 'RF_model_dep40.pickle'
 	loaded_model = pickle.load(open(filename, 'rb'))
+	df_names_holds = pd.read_csv("names_holds.csv",sep=',',header=None, names=['idx','setter','nholds','holds','Grade'])
+
 #	filename = '../RF_model.pickle'
 	#filename = 'model'
 	#loaded_model = h2o.load_model(filename)
@@ -124,6 +126,31 @@ def input_to_output_app():
 
 	mlb = MultiLabelBinarizer(classes=mlb_class)
 
+	def sort_diff(lst):
+		lst = coord(lst)
+		sort_lst = np.array(sorted(lst, key=lambda x:x[1]))
+		sort_diff = np.diff(sort_lst,axis=0)
+		return sort_diff
+	def find_user(lst):
+		leng = len(lst)
+		inp = sort_diff(lst)
+		setter = df_names_holds['setter'].loc[df_names_holds['nholds']==leng].reset_index(drop=True)
+		nholds = df_names_holds['nholds'].loc[df_names_holds['nholds']==leng].reset_index(drop=True)
+		holds_ = df_names_holds['holds'].loc[df_names_holds['nholds']==leng].reset_index(drop=True)
+		grd = df_names_holds['Grade'].loc[df_names_holds['nholds']==leng].reset_index(drop=True)
+		from ast import literal_eval
+		holds_ = holds_.apply(literal_eval)
+		comp = [sort_diff(holds_[i]) for i in range(len(holds_))]
+    #from sklearn.metrics.pairwise import cosine_similarity
+		from scipy.spatial.distance import cdist
+		sim = np.zeros((len(comp)))
+		for i in range(leng-1):
+			for j in range(len(comp)):
+				sim[j] += 1.-cdist(np.reshape(inp[i],(1,2)),np.reshape(comp[j][i],(1,2)),'cosine')
+		index = np.nanargmax(sim)
+		return [grd[index],setter[index],holds_[index]]
+
+
 # Using Skicit-learn to split data into training and testing sets
 # Instantiate model with 1000 decision trees
 # Train the model on training data
@@ -156,11 +183,12 @@ def input_to_output_app():
 #	pred = prob['predict'].as_data_frame().astype(int)
 #	cos_sim = pred
 	cos_sim = int(input_to_output(lst))
+	[Grade,setter,holds] = find_user(lst)
     # plot can be generated, saved as a file and loaded to html
     #return [rf2.predict(h_enc),rf2.predict_proba(h_enc)]
     #return render_template('recommendations.html', cos_sims = cos_sims, florist_info = florist_info)
     # return the calculation to recommendations.html
-	return render_template('return_grade.html', cos_sim = cos_sim)#,  florist_info = b)
+	return render_template('return_grade.html', cos_sim = cos_sim, Grade=Grade, setter = setter, holds = holds)#,  florist_info = b)
 
 if __name__ == '__main__':
     #this runs your app locally
