@@ -35,7 +35,35 @@ body {
    background-color: #cccccc;
    background-size: cover;
 }
+.centered {
+   display : block;
+   margin : 0 auto;
+   text-align: left;
+   width: 220px;
+}
+.row {
+    display: flex;
+}
+/* Create two equal columns that sits next to each other */
+.column {
+    flex: 50%;
+    padding: 10px;
+}
 </style>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link
+    href="https://cdn.pydata.org/bokeh/release/bokeh-0.13.0.min.css"
+    rel="stylesheet" type="text/css">
+<link
+    href="https://cdn.pydata.org/bokeh/release/bokeh-widgets-0.13.0.min.css"
+    rel="stylesheet" type="text/css">
+<link
+    href="https://cdn.pydata.org/bokeh/release/bokeh-tables-0.13.0.min.css"
+    rel="stylesheet" type="text/css">
+
+<script src="https://cdn.pydata.org/bokeh/release/bokeh-0.13.0.min.js"></script>
+<script src="https://cdn.pydata.org/bokeh/release/bokeh-widgets-0.13.0.min.js"></script>
+<script src="https://cdn.pydata.org/bokeh/release/bokeh-tables-0.13.0.min.js"></script>
 
 
 <title>Title</title>
@@ -47,17 +75,35 @@ body {
   <div class="starter-template">
 
 <br><br>
-<h3>Estimated grade of the user input problem</h3>
-<p>Grade: V{{ cos_sim }}</p>
+<h3>User input problem</h3>
+<!--<p>Grade: V{{ cos_sim }}</p>--!>
+<div class = "centered">
+        {{ div_inp|safe }}
+        {{ scr_inp|safe }}
+</div>
 <h3>Recommendations from the Moonboard Database:</h3>
-<h4>Easier twin of the problem</h4>
-<p>Problem: {{ holds_e }}</p>
-<p>Routesetter: {{ setter_e }}</p>
-<p>Grade: V{{ Grade_e }}</p>
-<h4>Harder twin of the problem</h4>
-<p>Problem: {{ holds_h }}</p>
-<p>Routesetter: {{ setter_h }}</p>
-<p>Grade: V{{ Grade_h }}</p>
+<div class = "row">
+   <div class = "column" >
+	<h4>Easier twin of the problem</h4>
+<!--	<p>Problem: {{ holds_e }}</p> --!>
+	<div class = "centered">
+        	{{ div_e|safe }}
+        	{{ scr_e|safe }}
+	</div>
+<!--	<p>Routesetter: {{ setter_e }}</p>
+	<p>Grade: V{{ Grade_e }}</p> --!>
+   </div>
+   <div class = "column" >
+	<h4>Harder twin of the problem</h4>
+<!--	<p>Problem: {{ holds_h }}</p>--!>
+	<div class = "centered">
+        	{{ div_h|safe }}
+        	{{ scr_h|safe }}
+	</div>
+<!--	<p>Routesetter: {{ setter_h }}</p>
+	<p>Grade: V{{ Grade_h }}</p>
+--!>   </div>
+</div>
 <!-- This is the important part!!
 The following code is basically what reads your data and runs your function from app.py
 Don't forget the {% for x in whatever %} if you use a for loop and end the for loop with {% endfor %} -->

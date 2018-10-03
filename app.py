@@ -108,11 +108,11 @@ def input_to_output_app():
 #		n = len(list)
 #		coords = [alphabet_to_num(split_xy(list[i])[0]) for i in range(n)]
 #		return [min(coords),max(coords)]
-	def xlims(list):
+	def xlims(lst):
     # return (leftmost, rightmost) x coordinate of a given problem
-		n = len(list)
+		n = len(lst)
     #coords = [alphabet_to_num(split_xy(list[i])[0]) for i in range(n)]
-		coords = coord(list).transpose()
+		coords = coord(lst).transpose()
 #    xcoords = [coords[i][0] for i in range(n)]
 #    xcoords = [alphabet_to_num(coords[i]) for i in range(n)]
 		return [np.min(coords[0]),np.max(coords[0])]
@@ -130,6 +130,28 @@ def input_to_output_app():
 		sort_lst = np.array(sorted(lst, key=lambda x:x[1]))
 		sort_diff = np.diff(sort_lst,axis=0)
 		return sort_diff
+	def plot_coords(lst,title,subtitle):
+		from bokeh.plotting import figure
+		from bokeh.embed import components
+		from bokeh.models import Title
+		num_coord = coord(lst).transpose()
+		x_coords = num_coord[0]
+		y_coords = num_coord[1]
+		plot = figure(x_range=(1,11), y_range = (1,18),plot_width=200, plot_height=300, toolbar_location = None)
+		plot.add_layout(Title(text=subtitle, text_font_style="italic"), 'above')
+		plot.add_layout(Title(text=title, text_font_size="16pt"), 'above')
+		plot.xaxis.axis_label = 'x'
+		plot.xaxis.minor_tick_line_color = None
+		plot.yaxis.axis_label = 'y'
+		plot.yaxis.minor_tick_line_color = None
+		plot.xgrid.grid_line_color = 'LightGrey'
+		plot.ygrid.grid_line_color = 'LightGrey'
+		plot.xaxis[0].ticker.desired_num_ticks = 11
+		plot.yaxis[0].ticker.desired_num_ticks = 18
+		plot.xaxis.major_label_overrides = {1: 'A', 2: 'B', 3: 'C', 4:'D', 5:'E', 6:'F', 7:'G', 8: 'H', 9: 'I', 10: 'J', 11: 'K'}
+		plot.circle(x_coords,y_coords,color="#B3DE69",alpha = 1)
+		script, div = components(plot)
+		return script, div	
 	def find_user(lst,grade):
 		from ast import literal_eval
 		leng = len(lst)
@@ -207,11 +229,14 @@ def input_to_output_app():
 #	cos_sim = pred
 	cos_sim = int(input_to_output(lst))
 	[Grade_e,setter_e,holds_e,Grade_h,setter_h,holds_h] = find_user(lst,cos_sim)
+	scr_inp,div_inp = plot_coords(lst,"Grade: V%d"%(cos_sim),"User input")
+	scr_e, div_e = plot_coords(holds_e,"Grade: V%d"%(Grade_e),"Setter: %s"%(setter_e))
+	scr_h, div_h = plot_coords(holds_h,"Grade: V%d"%(Grade_h),"Setter: %s"%(setter_h))
     # plot can be generated, saved as a file and loaded to html
     #return [rf2.predict(h_enc),rf2.predict_proba(h_enc)]
     #return render_template('recommendations.html', cos_sims = cos_sims, florist_info = florist_info)
     # return the calculation to recommendations.html
-	return render_template('return_grade.html', cos_sim = cos_sim, Grade_e=Grade_e, setter_e = setter_e, holds_e = holds_e, Grade_h = Grade_h, setter_h = setter_h, holds_h = holds_h)#,  florist_info = b)
+	return render_template('return_grade.html', cos_sim = cos_sim, scr_inp = scr_inp, div_inp = div_inp,Grade_e=Grade_e, setter_e = setter_e, holds_e = holds_e,scr_e = scr_e,div_e = div_e, Grade_h = Grade_h, setter_h = setter_h, holds_h = holds_h,scr_h = scr_h, div_h = div_h)#,  florist_info = b)
 
 if __name__ == '__main__':
     #this runs your app locally
