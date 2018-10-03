@@ -20,6 +20,11 @@
  font-family: Arial;
  color: #2E3759;
  }
+ .main h4 {
+ font-size: 1.5em;
+ font-family: Arial;
+ color: #2E3759;
+ }
  .main p {
  font-size:1em;
  font-family: Arial;
@@ -42,12 +47,17 @@ body {
   <div class="starter-template">
 
 <br><br>
-<h3>Result of the user input</h3>
+<h3>Estimated grade of the user input problem</h3>
 <p>Grade: V{{ cos_sim }}</p>
-<h3>Similar route in the database</h3>
-<p>Problem: {{ holds }}</p>
-<p>Routesetter: {{ setter }}</p>
-<p>Grade: V{{ Grade }}</p>
+<h3>Recommendations from the Moonboard Database:</h3>
+<h4>Easier twin of the problem</h4>
+<p>Problem: {{ holds_e }}</p>
+<p>Routesetter: {{ setter_e }}</p>
+<p>Grade: V{{ Grade_e }}</p>
+<h4>Harder twin of the problem</h4>
+<p>Problem: {{ holds_h }}</p>
+<p>Routesetter: {{ setter_h }}</p>
+<p>Grade: V{{ Grade_h }}</p>
 <!-- This is the important part!!
 The following code is basically what reads your data and runs your function from app.py
 Don't forget the {% for x in whatever %} if you use a for loop and end the for loop with {% endfor %} -->

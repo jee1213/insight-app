@@ -130,24 +130,48 @@ def input_to_output_app():
 		sort_lst = np.array(sorted(lst, key=lambda x:x[1]))
 		sort_diff = np.diff(sort_lst,axis=0)
 		return sort_diff
-	def find_user(lst):
+	def find_user(lst,grade):
+		from ast import literal_eval
 		leng = len(lst)
 		inp = sort_diff(lst)
-		setter = df_names_holds['setter'].loc[df_names_holds['nholds']==leng].reset_index(drop=True)
-		nholds = df_names_holds['nholds'].loc[df_names_holds['nholds']==leng].reset_index(drop=True)
-		holds_ = df_names_holds['holds'].loc[df_names_holds['nholds']==leng].reset_index(drop=True)
-		grd = df_names_holds['Grade'].loc[df_names_holds['nholds']==leng].reset_index(drop=True)
-		from ast import literal_eval
-		holds_ = holds_.apply(literal_eval)
-		comp = [sort_diff(holds_[i]) for i in range(len(holds_))]
+		if grade == 5:
+			setter_e = df_names_holds['setter'].loc[(df_names_holds['nholds']==leng) & (df_names_holds['Grade']==grade)].reset_index(drop=True)
+			holds_e = df_names_holds['holds'].loc[(df_names_holds['nholds']==leng)&(df_names_holds['Grade']==grade)].reset_index(drop=True)
+			grd_e = df_names_holds['Grade'].loc[(df_names_holds['nholds']==leng) & (df_names_holds['Grade']==grade)].reset_index(drop=True)
+		else:
+			setter_e = df_names_holds['setter'].loc[(df_names_holds['nholds']==leng) & (df_names_holds['Grade']==grade-1)].reset_index(drop=True)
+			holds_e = df_names_holds['holds'].loc[(df_names_holds['nholds']==leng)&(df_names_holds['Grade']==grade-1)].reset_index(drop=True)
+			grd_e = df_names_holds['Grade'].loc[(df_names_holds['nholds']==leng) & (df_names_holds['Grade']==grade-1)].reset_index(drop=True)
+		if grade == 9:
+			setter_h = df_names_holds['setter'].loc[(df_names_holds['nholds']==leng) & (df_names_holds['Grade']==grade)].reset_index(drop=True)
+			holds_h = df_names_holds['holds'].loc[(df_names_holds['nholds']==leng)&(df_names_holds['Grade']==grade)].reset_index(drop=True)
+			grd_h = df_names_holds['Grade'].loc[(df_names_holds['nholds']==leng) & (df_names_holds['Grade']==grade)].reset_index(drop=True)
+		else:
+			setter_h = df_names_holds['setter'].loc[(df_names_holds['nholds']==leng) & (df_names_holds['Grade']==grade+1)].reset_index(drop=True)
+			holds_h = df_names_holds['holds'].loc[(df_names_holds['nholds']==leng)&(df_names_holds['Grade']==grade+1)].reset_index(drop=True)
+			grd_h = df_names_holds['Grade'].loc[(df_names_holds['nholds']==leng) & (df_names_holds['Grade']==grade+1)].reset_index(drop=True)
+
+    #print(holds_[0])
+		holds_e = holds_e.apply(literal_eval)
+		holds_h = holds_h.apply(literal_eval)
+		comp_e = [sort_diff(holds_e[i]) for i in range(len(holds_e))]
+		comp_h = [sort_diff(holds_h[i]) for i in range(len(holds_h))]
+
+    #print(comp[1])
     #from sklearn.metrics.pairwise import cosine_similarity
 		from scipy.spatial.distance import cdist
-		sim = np.zeros((len(comp)))
+		sim_e = np.zeros((len(comp_e)))
+		sim_h = np.zeros((len(comp_h)))
 		for i in range(leng-1):
-			for j in range(len(comp)):
-				sim[j] += 1.-cdist(np.reshape(inp[i],(1,2)),np.reshape(comp[j][i],(1,2)),'cosine')
-		index = np.nanargmax(sim)
-		return [grd[index],setter[index],holds_[index]]
+			for j in range(len(comp_e)):
+				sim_e[j] += 1.-cdist(np.reshape(inp[i],(1,2)),np.reshape(comp_e[j][i],(1,2)),'cosine')
+			for k in range(len(comp_h)):
+				sim_h[k] += 1.-cdist(np.reshape(inp[i],(1,2)),np.reshape(comp_h[k][i],(1,2)),'cosine')
+    #print(sim)
+		index_e = np.nanargmax(sim_e)
+		index_h = np.nanargmax(sim_h)
+    #from sklearn.metrics.pairwise import cosine_similarity
+		return [grd_e[index_e],setter_e[index_e],holds_e[index_e],grd_h[index_h],setter_h[index_h],holds_h[index_h]]
 
 
 # Using Skicit-learn to split data into training and testing sets
@@ -182,12 +206,12 @@ def input_to_output_app():
 #	pred = prob['predict'].as_data_frame().astype(int)
 #	cos_sim = pred
 	cos_sim = int(input_to_output(lst))
-	[Grade,setter,holds] = find_user(lst)
+	[Grade_e,setter_e,holds_e,Grade_h,setter_h,holds_h] = find_user(lst,cos_sim)
     # plot can be generated, saved as a file and loaded to html
     #return [rf2.predict(h_enc),rf2.predict_proba(h_enc)]
     #return render_template('recommendations.html', cos_sims = cos_sims, florist_info = florist_info)
     # return the calculation to recommendations.html
-	return render_template('return_grade.html', cos_sim = cos_sim, Grade=Grade, setter = setter, holds = holds)#,  florist_info = b)
+	return render_template('return_grade.html', cos_sim = cos_sim, Grade_e=Grade_e, setter_e = setter_e, holds_e = holds_e, Grade_h = Grade_h, setter_h = setter_h, holds_h = holds_h)#,  florist_info = b)
 
 if __name__ == '__main__':
     #this runs your app locally

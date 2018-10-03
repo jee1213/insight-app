@@ -36,14 +36,62 @@ body {
    background-image: url("static/img/input2.jpg");
    background-repeat: no-repeat;
    background-size: cover;
-}				
+}
+.check {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  
+  input {
+    display: none;
+    &:checked + .box {
+      background-color: #b3ffb7;
+      
+      &:after {
+        top: 0;
+      }
+    }
+  }
+  .box {
+    width: 100%;
+    height: 100%;
+    transition: all 1.1s cubic-bezier(.19,1,.22,1);
+    border: 2px solid transparent;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+      box-shadow: 0 5px rgba(0,0,0,.2);
+    &:after {
+      width: 50%;
+      height: 20%;
+      content: '';
+      position: absolute;
+      border-left: 7.5px solid;
+      border-bottom: 7.5px solid;
+      border-color: #40c540;
+      transform: rotate(-45deg) translate3d(0,0,0);
+      transform-origin: center center;
+      transition: all 1.1s cubic-bezier(.19,1,.22,1);
+      left: 0;
+      right: 0;
+      top: 200%;
+      bottom: 5%;
+      margin: auto;
+    }
+  }
+}
 .container { position: relative; width: 100px; height: 100px; float: left; margin-left: 10px; }
-.checkbox { position: absolute; bottom: 0px; left: 0px; }
 .pic {
     display: block;
     height: 600px;
     width: 400px;
-    background: url('static/img/moonboard2016.png') no-repeat;
+    background: url('static/img/moonboard2016_greybg.png') no-repeat;
     position: relative;
     background-size: cover;
     margin-left: auto;
@@ -239,903 +287,809 @@ body {
 .chboxK7, 
 .chboxK8, 
 .chboxK9, .chboxK10, .chboxK11, .chboxK12, .chboxK13, .chboxK14, .chboxK15, .chboxK16, .chboxK17{
-position: absolute;
+position: relative;
 }
-
 .chboxA0 {
-   top: 569px;
-   left: 56px;
+   top: 556px;
+   left: 47px;
 }
 .chboxA1 {
-   top: 538px;
-   left: 56px;
+   top: 525px;
+   left: 22px;
 }
 .chboxA2 {
-   top: 507px;
-   left: 56px;
+   top: 494px;
+   left: -3px;
 }
 .chboxA3 {
-   top: 476px;
-   left: 56px;
+   top: 463px;
+   left: -28px;
 }
 .chboxA4 {
-   top: 445px;
-   left: 56px;
+   top: 432px;
+   left: -53px;
 }
 .chboxA5 {
-   top: 414px;
-   left: 56px;
+   top: 401px;
+   left: -78px;
 }
 .chboxA6 {
-   top: 383px;
-   left: 56px;
+   top: 370px;
+   left: -103px;
 }
 .chboxA7 {
-   top: 352px;
-   left: 56px;
+   top: 339px;
+   left: -128px;
 }
 .chboxA8 {
-   top: 321px;
-   left: 56px;
+   top: 308px;
+   left: -153px;
 }
 .chboxA9 {
-   top: 290px;
-   left: 56px;
+   top: 277px;
+   left: -178px;
 }
 .chboxA10 {
-   top: 259px;
-   left: 56px;
+   top: 246px;
+   left: -203px;
 }
 .chboxA11 {
-   top: 228px;
-   left: 56px;
+   top: 215px;
+   left: -228px;
 }
 .chboxA12 {
-   top: 197px;
-   left: 56px;
+   top: 184px;
+   left: -253px;
 }
 .chboxA13 {
-   top: 166px;
-   left: 56px;
+   top: 153px;
+   left: -278px;
 }
 .chboxA14 {
-   top: 135px;
-   left: 56px;
+   top: 122px;
+   left: -303px;
 }
 .chboxA15 {
-   top: 104px;
-   left: 56px;
+   top: 91px;
+   left: -328px;
 }
 .chboxA16 {
-   top: 73px;
-   left: 56px;
+   top: 29px;
+   left: 46px;
 }
 .chboxA17 {
-   top: 42px;
-   left: 56px;
+   top: -2px;
+   left: 21px;
 }
 .chboxB0 {
-   top: 569px;
-   left: 86px;
+   top: 523px;
+   left: 28px;
 }
 .chboxB1 {
-   top: 538px;
-   left: 86px;
+   top: 492px;
+   left: 3px;
 }
 .chboxB2 {
-   top: 507px;
-   left: 86px;
+   top: 461px;
+   left: -22px;
 }
 .chboxB3 {
-   top: 476px;
-   left: 86px;
+   top: 430px;
+   left: -47px;
 }
 .chboxB4 {
-   top: 445px;
-   left: 86px;
+   top: 399px;
+   left: -72px;
 }
 .chboxB5 {
-   top: 414px;
-   left: 86px;
+   top: 368px;
+   left: -97px;
 }
 .chboxB6 {
-   top: 383px;
-   left: 86px;
+   top: 337px;
+   left: -122px;
 }
 .chboxB7 {
-   top: 352px;
-   left: 86px;
+   top: 306px;
+   left: -147px;
 }
 .chboxB8 {
-   top: 321px;
-   left: 86px;
+   top: 275px;
+   left: -172px;
 }
 .chboxB9 {
-   top: 290px;
-   left: 86px;
+   top: 244px;
+   left: -197px;
 }
 .chboxB10 {
-   top: 259px;
-   left: 86px;
+   top: 213px;
+   left: -222px;
 }
 .chboxB11 {
-   top: 228px;
-   left: 86px;
+   top: 182px;
+   left: -247px;
 }
 .chboxB12 {
-   top: 197px;
-   left: 86px;
+   top: 151px;
+   left: -272px;
 }
 .chboxB13 {
-   top: 166px;
-   left: 86px;
+   top: 120px;
+   left: -297px;
 }
 .chboxB14 {
-   top: 135px;
-   left: 86px;
+   top: 58px;
+   left: 77px;
 }
 .chboxB15 {
-   top: 104px;
-   left: 86px;
+   top: 27px;
+   left: 52px;
 }
 .chboxB16 {
-   top: 73px;
-   left: 86px;
+   top: -4px;
+   left: 27px;
 }
 .chboxB17 {
-   top: 42px;
-   left: 86px;
+   top: -35px;
+   left: 2px;
 }
 .chboxC0 {
-   top: 569px;
-   left: 116px;
+   top: 490px;
+   left: 9px;
 }
 .chboxC1 {
-   top: 538px;
-   left: 116px;
+   top: 459px;
+   left: -16px;
 }
 .chboxC2 {
-   top: 507px;
-   left: 116px;
+   top: 428px;
+   left: -41px;
 }
 .chboxC3 {
-   top: 476px;
-   left: 116px;
+   top: 397px;
+   left: -66px;
 }
 .chboxC4 {
-   top: 445px;
-   left: 116px;
+   top: 366px;
+   left: -91px;
 }
 .chboxC5 {
-   top: 414px;
-   left: 116px;
+   top: 335px;
+   left: -116px;
 }
 .chboxC6 {
-   top: 383px;
-   left: 116px;
+   top: 304px;
+   left: -141px;
 }
 .chboxC7 {
-   top: 352px;
-   left: 116px;
+   top: 273px;
+   left: -166px;
 }
 .chboxC8 {
-   top: 321px;
-   left: 116px;
+   top: 242px;
+   left: -191px;
 }
 .chboxC9 {
-   top: 290px;
-   left: 116px;
+   top: 211px;
+   left: -216px;
 }
 .chboxC10 {
-   top: 259px;
-   left: 116px;
+   top: 180px;
+   left: -241px;
 }
 .chboxC11 {
-   top: 228px;
-   left: 116px;
+   top: 149px;
+   left: -266px;
 }
 .chboxC12 {
-   top: 197px;
-   left: 116px;
+   top: 87px;
+   left: 108px;
 }
 .chboxC13 {
-   top: 166px;
-   left: 116px;
+   top: 56px;
+   left: 83px;
 }
 .chboxC14 {
-   top: 135px;
-   left: 116px;
+   top: 25px;
+   left: 58px;
 }
 .chboxC15 {
-   top: 104px;
-   left: 116px;
+   top: -6px;
+   left: 33px;
 }
 .chboxC16 {
-   top: 73px;
-   left: 116px;
+   top: -37px;
+   left: 8px;
 }
 .chboxC17 {
-   top: 42px;
-   left: 116px;
+   top: -68px;
+   left: -17px;
 }
 .chboxD0 {
-   top: 569px;
-   left: 146px;
+   top: 457px;
+   left: -10px;
 }
 .chboxD1 {
-   top: 538px;
-   left: 146px;
+   top: 426px;
+   left: -35px;
 }
 .chboxD2 {
-   top: 507px;
-   left: 146px;
+   top: 395px;
+   left: -60px;
 }
 .chboxD3 {
-   top: 476px;
-   left: 146px;
+   top: 364px;
+   left: -85px;
 }
 .chboxD4 {
-   top: 445px;
-   left: 146px;
+   top: 333px;
+   left: -110px;
 }
 .chboxD5 {
-   top: 414px;
-   left: 146px;
+   top: 302px;
+   left: -135px;
 }
 .chboxD6 {
-   top: 383px;
-   left: 146px;
+   top: 271px;
+   left: -160px;
 }
 .chboxD7 {
-   top: 352px;
-   left: 146px;
+   top: 240px;
+   left: -185px;
 }
 .chboxD8 {
-   top: 321px;
-   left: 146px;
+   top: 209px;
+   left: -210px;
 }
 .chboxD9 {
-   top: 290px;
-   left: 146px;
+   top: 178px;
+   left: -235px;
 }
 .chboxD10 {
-   top: 259px;
-   left: 146px;
+   top: 116px;
+   left: 139px;
 }
 .chboxD11 {
-   top: 228px;
-   left: 146px;
+   top: 85px;
+   left: 114px;
 }
 .chboxD12 {
-   top: 197px;
-   left: 146px;
+   top: 54px;
+   left: 89px;
 }
 .chboxD13 {
-   top: 166px;
-   left: 146px;
+   top: 23px;
+   left: 64px;
 }
 .chboxD14 {
-   top: 135px;
-   left: 146px;
+   top: -8px;
+   left: 39px;
 }
 .chboxD15 {
-   top: 104px;
-   left: 146px;
+   top: -39px;
+   left: 14px;
 }
 .chboxD16 {
-   top: 73px;
-   left: 146px;
+   top: -70px;
+   left: -11px;
 }
 .chboxD17 {
-   top: 42px;
-   left: 146px;
+   top: -101px;
+   left: -36px;
 }
 .chboxE0 {
-   top: 569px;
-   left: 176px;
+   top: 424px;
+   left: -29px;
 }
 .chboxE1 {
-   top: 538px;
-   left: 176px;
+   top: 393px;
+   left: -54px;
 }
 .chboxE2 {
-   top: 507px;
-   left: 176px;
+   top: 362px;
+   left: -79px;
 }
 .chboxE3 {
-   top: 476px;
-   left: 176px;
+   top: 331px;
+   left: -104px;
 }
 .chboxE4 {
-   top: 445px;
-   left: 176px;
+   top: 300px;
+   left: -129px;
 }
 .chboxE5 {
-   top: 414px;
-   left: 176px;
+   top: 269px;
+   left: -154px;
 }
 .chboxE6 {
-   top: 383px;
-   left: 176px;
+   top: 238px;
+   left: -179px;
 }
 .chboxE7 {
-   top: 352px;
-   left: 176px;
+   top: 207px;
+   left: -204px;
 }
 .chboxE8 {
-   top: 321px;
-   left: 176px;
+   top: 145px;
+   left: 170px;
 }
 .chboxE9 {
-   top: 290px;
-   left: 176px;
+   top: 114px;
+   left: 145px;
 }
 .chboxE10 {
-   top: 259px;
-   left: 176px;
+   top: 83px;
+   left: 120px;
 }
 .chboxE11 {
-   top: 228px;
-   left: 176px;
+   top: 52px;
+   left: 95px;
 }
 .chboxE12 {
-   top: 197px;
-   left: 176px;
+   top: 21px;
+   left: 70px;
 }
 .chboxE13 {
-   top: 166px;
-   left: 176px;
+   top: -10px;
+   left: 45px;
 }
 .chboxE14 {
-   top: 135px;
-   left: 176px;
+   top: -41px;
+   left: 20px;
 }
 .chboxE15 {
-   top: 104px;
-   left: 176px;
+   top: -72px;
+   left: -5px;
 }
 .chboxE16 {
-   top: 73px;
-   left: 176px;
+   top: -103px;
+   left: -30px;
 }
 .chboxE17 {
-   top: 42px;
-   left: 176px;
+   top: -134px;
+   left: -55px;
 }
 .chboxF0 {
-   top: 569px;
-   left: 206px;
+   top: 391px;
+   left: -48px;
 }
 .chboxF1 {
-   top: 538px;
-   left: 206px;
+   top: 360px;
+   left: -73px;
 }
 .chboxF2 {
-   top: 507px;
-   left: 206px;
+   top: 329px;
+   left: -98px;
 }
 .chboxF3 {
-   top: 476px;
-   left: 206px;
+   top: 298px;
+   left: -123px;
 }
 .chboxF4 {
-   top: 445px;
-   left: 206px;
+   top: 267px;
+   left: -148px;
 }
 .chboxF5 {
-   top: 414px;
-   left: 206px;
+   top: 236px;
+   left: -173px;
 }
 .chboxF6 {
-   top: 383px;
-   left: 206px;
+   top: 174px;
+   left: 201px;
 }
 .chboxF7 {
-   top: 352px;
-   left: 206px;
+   top: 143px;
+   left: 176px;
 }
 .chboxF8 {
-   top: 321px;
-   left: 206px;
+   top: 112px;
+   left: 151px;
 }
 .chboxF9 {
-   top: 290px;
-   left: 206px;
+   top: 81px;
+   left: 126px;
 }
 .chboxF10 {
-   top: 259px;
-   left: 206px;
+   top: 50px;
+   left: 101px;
 }
 .chboxF11 {
-   top: 228px;
-   left: 206px;
+   top: 19px;
+   left: 76px;
 }
 .chboxF12 {
-   top: 197px;
-   left: 206px;
+   top: -12px;
+   left: 51px;
 }
 .chboxF13 {
-   top: 166px;
-   left: 206px;
+   top: -43px;
+   left: 26px;
 }
 .chboxF14 {
-   top: 135px;
-   left: 206px;
+   top: -74px;
+   left: 1px;
 }
 .chboxF15 {
-   top: 104px;
-   left: 206px;
+   top: -105px;
+   left: -24px;
 }
 .chboxF16 {
-   top: 73px;
-   left: 206px;
+   top: -136px;
+   left: -49px;
 }
 .chboxF17 {
-   top: 42px;
-   left: 206px;
+   top: -167px;
+   left: -74px;
 }
 .chboxG0 {
-   top: 569px;
-   left: 236px;
+   top: 358px;
+   left: -67px;
 }
 .chboxG1 {
-   top: 538px;
-   left: 236px;
+   top: 327px;
+   left: -92px;
 }
 .chboxG2 {
-   top: 507px;
-   left: 236px;
+   top: 296px;
+   left: -117px;
 }
 .chboxG3 {
-   top: 476px;
-   left: 236px;
+   top: 265px;
+   left: -142px;
 }
 .chboxG4 {
-   top: 445px;
-   left: 236px;
+   top: 203px;
+   left: 232px;
 }
 .chboxG5 {
-   top: 414px;
-   left: 236px;
+   top: 172px;
+   left: 207px;
 }
 .chboxG6 {
-   top: 383px;
-   left: 236px;
+   top: 141px;
+   left: 182px;
 }
 .chboxG7 {
-   top: 352px;
-   left: 236px;
+   top: 110px;
+   left: 157px;
 }
 .chboxG8 {
-   top: 321px;
-   left: 236px;
+   top: 79px;
+   left: 132px;
 }
 .chboxG9 {
-   top: 290px;
-   left: 236px;
+   top: 48px;
+   left: 107px;
 }
 .chboxG10 {
-   top: 259px;
-   left: 236px;
+   top: 17px;
+   left: 82px;
 }
 .chboxG11 {
-   top: 228px;
-   left: 236px;
+   top: -14px;
+   left: 57px;
 }
 .chboxG12 {
-   top: 197px;
-   left: 236px;
+   top: -45px;
+   left: 32px;
 }
 .chboxG13 {
-   top: 166px;
-   left: 236px;
+   top: -76px;
+   left: 7px;
 }
 .chboxG14 {
-   top: 135px;
-   left: 236px;
+   top: -107px;
+   left: -18px;
 }
 .chboxG15 {
-   top: 104px;
-   left: 236px;
+   top: -138px;
+   left: -43px;
 }
 .chboxG16 {
-   top: 73px;
-   left: 236px;
+   top: -169px;
+   left: -68px;
 }
 .chboxG17 {
-   top: 42px;
-   left: 236px;
+   top: -200px;
+   left: -93px;
 }
 .chboxH0 {
-   top: 569px;
-   left: 266px;
+   top: 325px;
+   left: -86px;
 }
 .chboxH1 {
-   top: 538px;
-   left: 266px;
+   top: 294px;
+   left: -111px;
 }
 .chboxH2 {
-   top: 507px;
-   left: 266px;
+   top: 232px;
+   left: 263px;
 }
 .chboxH3 {
-   top: 476px;
-   left: 266px;
+   top: 201px;
+   left: 238px;
 }
 .chboxH4 {
-   top: 445px;
-   left: 266px;
+   top: 170px;
+   left: 213px;
 }
 .chboxH5 {
-   top: 414px;
-   left: 266px;
+   top: 139px;
+   left: 188px;
 }
 .chboxH6 {
-   top: 383px;
-   left: 266px;
+   top: 108px;
+   left: 163px;
 }
 .chboxH7 {
-   top: 352px;
-   left: 266px;
+   top: 77px;
+   left: 138px;
 }
 .chboxH8 {
-   top: 321px;
-   left: 266px;
+   top: 46px;
+   left: 113px;
 }
 .chboxH9 {
-   top: 290px;
-   left: 266px;
+   top: 15px;
+   left: 88px;
 }
 .chboxH10 {
-   top: 259px;
-   left: 266px;
+   top: -16px;
+   left: 63px;
 }
 .chboxH11 {
-   top: 228px;
-   left: 266px;
+   top: -47px;
+   left: 38px;
 }
 .chboxH12 {
-   top: 197px;
-   left: 266px;
+   top: -78px;
+   left: 13px;
 }
 .chboxH13 {
-   top: 166px;
-   left: 266px;
+   top: -109px;
+   left: -12px;
 }
 .chboxH14 {
-   top: 135px;
-   left: 266px;
+   top: -140px;
+   left: -37px;
 }
 .chboxH15 {
-   top: 104px;
-   left: 266px;
+   top: -171px;
+   left: -62px;
 }
 .chboxH16 {
-   top: 73px;
-   left: 266px;
+   top: -202px;
+   left: -87px;
 }
 .chboxH17 {
-   top: 42px;
-   left: 266px;
+   top: -233px;
+   left: -112px;
 }
 .chboxI0 {
-   top: 569px;
-   left: 296px;
+   top: 256px;
+   left: 294px;
 }
 .chboxI1 {
-   top: 538px;
-   left: 296px;
+   top: 225px;
+   left: 269px;
 }
 .chboxI2 {
-   top: 507px;
-   left: 296px;
+   top: 194px;
+   left: 244px;
 }
 .chboxI3 {
-   top: 476px;
-   left: 296px;
+   top: 163px;
+   left: 219px;
 }
 .chboxI4 {
-   top: 445px;
-   left: 296px;
+   top: 132px;
+   left: 194px;
 }
 .chboxI5 {
-   top: 414px;
-   left: 296px;
+   top: 101px;
+   left: 169px;
 }
 .chboxI6 {
-   top: 383px;
-   left: 296px;
+   top: 70px;
+   left: 144px;
 }
 .chboxI7 {
-   top: 352px;
-   left: 296px;
+   top: 39px;
+   left: 119px;
 }
 .chboxI8 {
-   top: 321px;
-   left: 296px;
+   top: 8px;
+   left: 94px;
 }
 .chboxI9 {
-   top: 290px;
-   left: 296px;
+   top: -23px;
+   left: 69px;
 }
 .chboxI10 {
-   top: 259px;
-   left: 296px;
+   top: -49px;
+   left: 44px;
 }
 .chboxI11 {
-   top: 228px;
-   left: 296px;
+   top: -80px;
+   left: 19px;
 }
 .chboxI12 {
-   top: 197px;
-   left: 296px;
+   top: -111px;
+   left: -6px;
 }
 .chboxI13 {
-   top: 166px;
-   left: 296px;
+   top: -142px;
+   left: -31px;
 }
 .chboxI14 {
-   top: 135px;
-   left: 296px;
+   top: -173px;
+   left: -56px;
 }
 .chboxI15 {
-   top: 104px;
-   left: 296px;
+   top: -204px;
+   left: -81px;
 }
 .chboxI16 {
-   top: 73px;
-   left: 296px;
+   top: -271px;
+   left: 293px;
 }
 .chboxI17 {
-   top: 42px;
-   left: 296px;
+   top: -302px;
+   left: 268px;
 }
 .chboxJ0 {
-   top: 569px;
-   left: 326px;
+   top: 223px;
+   left: 275px;
 }
 .chboxJ1 {
-   top: 538px;
-   left: 326px;
+   top: 192px;
+   left: 250px;
 }
 .chboxJ2 {
-   top: 507px;
-   left: 326px;
+   top: 161px;
+   left: 225px;
 }
 .chboxJ3 {
-   top: 476px;
-   left: 326px;
+   top: 130px;
+   left: 200px;
 }
 .chboxJ4 {
-   top: 445px;
-   left: 326px;
+   top: 99px;
+   left: 175px;
 }
 .chboxJ5 {
-   top: 414px;
-   left: 326px;
+   top: 68px;
+   left: 150px;
 }
 .chboxJ6 {
-   top: 383px;
-   left: 326px;
+   top: 37px;
+   left: 125px;
 }
 .chboxJ7 {
-   top: 352px;
-   left: 326px;
+   top: 6px;
+   left: 100px;
 }
 .chboxJ8 {
-   top: 321px;
-   left: 326px;
+   top: -25px;
+   left: 75px;
 }
 .chboxJ9 {
-   top: 290px;
-   left: 326px;
+   top: -51px;
+   left: 50px;
 }
 .chboxJ10 {
-   top: 259px;
-   left: 326px;
+   top: -82px;
+   left: 25px;
 }
 .chboxJ11 {
-   top: 228px;
-   left: 326px;
+   top: -113px;
+   left: 0px;
 }
 .chboxJ12 {
-   top: 197px;
-   left: 326px;
+   top: -144px;
+   left: -25px;
 }
 .chboxJ13 {
-   top: 166px;
-   left: 326px;
+   top: -175px;
+   left: -50px;
 }
 .chboxJ14 {
-   top: 135px;
-   left: 326px;
+   top: -242px;
+   left: 324px;
 }
 .chboxJ15 {
-   top: 104px;
-   left: 326px;
+   top: -273px;
+   left: 299px;
 }
 .chboxJ16 {
-   top: 73px;
-   left: 326px;
+   top: -304px;
+   left: 274px;
 }
 .chboxJ17 {
-   top: 42px;
-   left: 326px;
+   top: -335px;
+   left: 249px;
 }
 .chboxK0 {
-   top: 569px;
-   left: 356px;
+   top: 190px;
+   left: 256px;
 }
 .chboxK1 {
-   top: 538px;
-   left: 356px;
+   top: 159px;
+   left: 231px;
 }
 .chboxK2 {
-   top: 507px;
-   left: 356px;
+   top: 128px;
+   left: 206px;
 }
 .chboxK3 {
-   top: 476px;
-   left: 356px;
+   top: 97px;
+   left: 181px;
 }
 .chboxK4 {
-   top: 445px;
-   left: 356px;
+   top: 66px;
+   left: 156px;
 }
 .chboxK5 {
-   top: 414px;
-   left: 356px;
+   top: 35px;
+   left: 131px;
 }
 .chboxK6 {
-   top: 383px;
-   left: 356px;
+   top: 4px;
+   left: 106px;
 }
 .chboxK7 {
-   top: 352px;
-   left: 356px;
+   top: -27px;
+   left: 81px;
 }
 .chboxK8 {
-   top: 321px;
-   left: 356px;
+   top: -53px;
+   left: 56px;
 }
 .chboxK9 {
-   top: 290px;
-   left: 356px;
+   top: -84px;
+   left: 31px;
 }
 .chboxK10 {
-   top: 259px;
-   left: 356px;
+   top: -115px;
+   left: 6px;
 }
 .chboxK11 {
-   top: 228px;
-   left: 356px;
+   top: -146px;
+   left: -19px;
 }
 .chboxK12 {
-   top: 197px;
-   left: 356px;
+   top: -213px;
+   left: 231px;
 }
 .chboxK13 {
-   top: 166px;
-   left: 356px;
+   top: -244px;
+   left: 206px;
 }
 .chboxK14 {
-   top: 135px;
-   left: 356px;
+   top: -275px;
+   left: 181px;
 }
 .chboxK15 {
-   top: 104px;
-   left: 356px;
+   top: -306px;
+   left: 156px;
 }
 .chboxK16 {
-   top: 73px;
-   left: 356px;
+   top: -337px;
+   left: 131px;
 }
 .chboxK17 {
-   top: 42px;
-   left: 356px;
-}
-
-/* 
-Generic Styling, for Desktops/Laptops 
-*/
-table { 
-  width: 100%; 
-  border-collapse: collapse; 
-}
-/* Zebra striping */
-tr:nth-of-type(odd) { 
-  background: #eee; 
-}
-th { 
-  background: #333; 
-  color: white; 
-  font-weight: bold; 
-}
-td, th { 
-  padding: 6px; 
-  border: 1px solid #ccc; 
-  text-align: left; 
-}
-
-/* 
-Max width before this PARTICULAR table gets nasty
-This query will take effect for any screen smaller than 760px
-and also iPads specifically.
-*/
-@media 
-only screen and (max-width: 760px),
-(min-device-width: 768px) and (max-device-width: 1024px)  {
-
-	.responsive-table-input-matrix {
-		display: block;
-		position: relative;
-		width: 100%;
-
-		&:after {
-			clear: both;
-			content: '';
-			display: block;
-			font-size: 0;
-			height: 0;
-			visibility: hidden;
-		}
-
-		tbody {
-			display: block;
-			overflow-x: auto;
-			position: relative;
-			white-space: nowrap;
-			width: auto;
-
-
-			tr {
-				display: inline-block;
-				vertical-align: top;
-
-				td {
-					display: block;
-					text-align: center;
-
-					&:first-child {
-						text-align: left;
-					}
-				}
-			}
-		}
-
-		thead {
-			display: block;
-			float: left;
-			margin-right: 10px;
-
-			&:after {
-				clear: both;
-				content: "";
-				display: block;
-				font-size: 0;
-				height: 0;
-				visibility: hidden;
-			}
-
-			th:first-of-type {
-				height: 1.4em;
-			}
-
-			th {
-				display: block;
-				text-align: right;
-
-				&:first-child {
-					text-align: right;
-				}
-			}
-		}
-	}
+   top: -368px;
+   left: 106px;
 }
 </style>
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!--<link rel="stylesheet" href="static/css/checkbox_radio.css">
+<link rel="stylesheet" href="static/css/checkbox_radio_bootstrap.css">
+<link rel="stylesheet" href="static/css/checkbox_radio_font.css">
+--!>
+<link rel="stylesheet" href="static/css/checkbox_radio_img_sprite.css">
 <!------ Include the above in your HEAD tag ----------!>
 
     <title>Moonboard Grade Predictor</title>
@@ -1182,479 +1136,803 @@ only screen and (max-width: 760px),
 
 <!--<div class="container">--!>
 <h3>Moonboard 2016</h3>
+<!--<label class="checkbox checkbox-xs">
+<input type="checkbox">
+<i class="icon-checkbox"></i>
+</label> --!>
 <div class="pic">
-<input type="checkbox", name = "check", class = "chboxA0" value = A1>
-<input type="checkbox", name = "check", class = "chboxA1" value = A2>
-<input type="checkbox", name = "check", class = "chboxA2" value = A3>
-<input type="checkbox", name = "check", class = "chboxA3" value = A4>
-<input type="checkbox", name = "check", class = "chboxA4" value = A5>
-<input type="checkbox", name = "check", class = "chboxA5" value = A6>
-<input type="checkbox", name = "check", class = "chboxA6" value = A7>
-<input type="checkbox", name = "check", class = "chboxA7" value = A8>
-<input type="checkbox", name = "check", class = "chboxA8" value = A9>
-<input type="checkbox", name = "check", class = "chboxA9" value = A10>
-<input type="checkbox", name = "check", class = "chboxA10" value = A11>
-<input type="checkbox", name = "check", class = "chboxA11" value = A12>
-<input type="checkbox", name = "check", class = "chboxA12" value = A13>
-<input type="checkbox", name = "check", class = "chboxA13" value = A14>
-<input type="checkbox", name = "check", class = "chboxA14" value = A15>
-<input type="checkbox", name = "check", class = "chboxA15" value = A16>
-<input type="checkbox", name = "check", class = "chboxA16" value = A17>
-<input type="checkbox", name = "check", class = "chboxA17" value = A18>
-<input type="checkbox", name = "check", class = "chboxB0" value = B1>
-<input type="checkbox", name = "check", class = "chboxB1" value = B2>
-<input type="checkbox", name = "check", class = "chboxB2" value = B3>
-<input type="checkbox", name = "check", class = "chboxB3" value = B4>
-<input type="checkbox", name = "check", class = "chboxB4" value = B5>
-<input type="checkbox", name = "check", class = "chboxB5" value = B6>
-<input type="checkbox", name = "check", class = "chboxB6" value = B7>
-<input type="checkbox", name = "check", class = "chboxB7" value = B8>
-<input type="checkbox", name = "check", class = "chboxB8" value = B9>
-<input type="checkbox", name = "check", class = "chboxB9" value = B10>
-<input type="checkbox", name = "check", class = "chboxB10" value = B11>
-<input type="checkbox", name = "check", class = "chboxB11" value = B12>
-<input type="checkbox", name = "check", class = "chboxB12" value = B13>
-<input type="checkbox", name = "check", class = "chboxB13" value = B14>
-<input type="checkbox", name = "check", class = "chboxB14" value = B15>
-<input type="checkbox", name = "check", class = "chboxB15" value = B16>
-<input type="checkbox", name = "check", class = "chboxB16" value = B17>
-<input type="checkbox", name = "check", class = "chboxB17" value = B18>
-<input type="checkbox", name = "check", class = "chboxC0" value = C1>
-<input type="checkbox", name = "check", class = "chboxC1" value = C2>
-<input type="checkbox", name = "check", class = "chboxC2" value = C3>
-<input type="checkbox", name = "check", class = "chboxC3" value = C4>
-<input type="checkbox", name = "check", class = "chboxC4" value = C5>
-<input type="checkbox", name = "check", class = "chboxC5" value = C6>
-<input type="checkbox", name = "check", class = "chboxC6" value = C7>
-<input type="checkbox", name = "check", class = "chboxC7" value = C8>
-<input type="checkbox", name = "check", class = "chboxC8" value = C9>
-<input type="checkbox", name = "check", class = "chboxC9" value = C10>
-<input type="checkbox", name = "check", class = "chboxC10" value = C11>
-<input type="checkbox", name = "check", class = "chboxC11" value = C12>
-<input type="checkbox", name = "check", class = "chboxC12" value = C13>
-<input type="checkbox", name = "check", class = "chboxC13" value = C14>
-<input type="checkbox", name = "check", class = "chboxC14" value = C15>
-<input type="checkbox", name = "check", class = "chboxC15" value = C16>
-<input type="checkbox", name = "check", class = "chboxC16" value = C17>
-<input type="checkbox", name = "check", class = "chboxC17" value = C18>
-<input type="checkbox", name = "check", class = "chboxD0" value = D1>
-<input type="checkbox", name = "check", class = "chboxD1" value = D2>
-<input type="checkbox", name = "check", class = "chboxD2" value = D3>
-<input type="checkbox", name = "check", class = "chboxD3" value = D4>
-<input type="checkbox", name = "check", class = "chboxD4" value = D5>
-<input type="checkbox", name = "check", class = "chboxD5" value = D6>
-<input type="checkbox", name = "check", class = "chboxD6" value = D7>
-<input type="checkbox", name = "check", class = "chboxD7" value = D8>
-<input type="checkbox", name = "check", class = "chboxD8" value = D9>
-<input type="checkbox", name = "check", class = "chboxD9" value = D10>
-<input type="checkbox", name = "check", class = "chboxD10" value = D11>
-<input type="checkbox", name = "check", class = "chboxD11" value = D12>
-<input type="checkbox", name = "check", class = "chboxD12" value = D13>
-<input type="checkbox", name = "check", class = "chboxD13" value = D14>
-<input type="checkbox", name = "check", class = "chboxD14" value = D15>
-<input type="checkbox", name = "check", class = "chboxD15" value = D16>
-<input type="checkbox", name = "check", class = "chboxD16" value = D17>
-<input type="checkbox", name = "check", class = "chboxD17" value = D18>
-<input type="checkbox", name = "check", class = "chboxE0" value = E1>
-<input type="checkbox", name = "check", class = "chboxE1" value = E2>
-<input type="checkbox", name = "check", class = "chboxE2" value = E3>
-<input type="checkbox", name = "check", class = "chboxE3" value = E4>
-<input type="checkbox", name = "check", class = "chboxE4" value = E5>
-<input type="checkbox", name = "check", class = "chboxE5" value = E6>
-<input type="checkbox", name = "check", class = "chboxE6" value = E7>
-<input type="checkbox", name = "check", class = "chboxE7" value = E8>
-<input type="checkbox", name = "check", class = "chboxE8" value = E9>
-<input type="checkbox", name = "check", class = "chboxE9" value = E10>
-<input type="checkbox", name = "check", class = "chboxE10" value = E11>
-<input type="checkbox", name = "check", class = "chboxE11" value = E12>
-<input type="checkbox", name = "check", class = "chboxE12" value = E13>
-<input type="checkbox", name = "check", class = "chboxE13" value = E14>
-<input type="checkbox", name = "check", class = "chboxE14" value = E15>
-<input type="checkbox", name = "check", class = "chboxE15" value = E16>
-<input type="checkbox", name = "check", class = "chboxE16" value = E17>
-<input type="checkbox", name = "check", class = "chboxE17" value = E18>
-<input type="checkbox", name = "check", class = "chboxF0" value = F1>
-<input type="checkbox", name = "check", class = "chboxF1" value = F2>
-<input type="checkbox", name = "check", class = "chboxF2" value = F3>
-<input type="checkbox", name = "check", class = "chboxF3" value = F4>
-<input type="checkbox", name = "check", class = "chboxF4" value = F5>
-<input type="checkbox", name = "check", class = "chboxF5" value = F6>
-<input type="checkbox", name = "check", class = "chboxF6" value = F7>
-<input type="checkbox", name = "check", class = "chboxF7" value = F8>
-<input type="checkbox", name = "check", class = "chboxF8" value = F9>
-<input type="checkbox", name = "check", class = "chboxF9" value = F10>
-<input type="checkbox", name = "check", class = "chboxF10" value = F11>
-<input type="checkbox", name = "check", class = "chboxF11" value = F12>
-<input type="checkbox", name = "check", class = "chboxF12" value = F13>
-<input type="checkbox", name = "check", class = "chboxF13" value = F14>
-<input type="checkbox", name = "check", class = "chboxF14" value = F15>
-<input type="checkbox", name = "check", class = "chboxF15" value = F16>
-<input type="checkbox", name = "check", class = "chboxF16" value = F17>
-<input type="checkbox", name = "check", class = "chboxF17" value = F18>
-<input type="checkbox", name = "check", class = "chboxG0" value = G1>
-<input type="checkbox", name = "check", class = "chboxG1" value = G2>
-<input type="checkbox", name = "check", class = "chboxG2" value = G3>
-<input type="checkbox", name = "check", class = "chboxG3" value = G4>
-<input type="checkbox", name = "check", class = "chboxG4" value = G5>
-<input type="checkbox", name = "check", class = "chboxG5" value = G6>
-<input type="checkbox", name = "check", class = "chboxG6" value = G7>
-<input type="checkbox", name = "check", class = "chboxG7" value = G8>
-<input type="checkbox", name = "check", class = "chboxG8" value = G9>
-<input type="checkbox", name = "check", class = "chboxG9" value = G10>
-<input type="checkbox", name = "check", class = "chboxG10" value = G11>
-<input type="checkbox", name = "check", class = "chboxG11" value = G12>
-<input type="checkbox", name = "check", class = "chboxG12" value = G13>
-<input type="checkbox", name = "check", class = "chboxG13" value = G14>
-<input type="checkbox", name = "check", class = "chboxG14" value = G15>
-<input type="checkbox", name = "check", class = "chboxG15" value = G16>
-<input type="checkbox", name = "check", class = "chboxG16" value = G17>
-<input type="checkbox", name = "check", class = "chboxG17" value = G18>
-<input type="checkbox", name = "check", class = "chboxH0" value = H1>
-<input type="checkbox", name = "check", class = "chboxH1" value = H2>
-<input type="checkbox", name = "check", class = "chboxH2" value = H3>
-<input type="checkbox", name = "check", class = "chboxH3" value = H4>
-<input type="checkbox", name = "check", class = "chboxH4" value = H5>
-<input type="checkbox", name = "check", class = "chboxH5" value = H6>
-<input type="checkbox", name = "check", class = "chboxH6" value = H7>
-<input type="checkbox", name = "check", class = "chboxH7" value = H8>
-<input type="checkbox", name = "check", class = "chboxH8" value = H9>
-<input type="checkbox", name = "check", class = "chboxH9" value = H10>
-<input type="checkbox", name = "check", class = "chboxH10" value = H11>
-<input type="checkbox", name = "check", class = "chboxH11" value = H12>
-<input type="checkbox", name = "check", class = "chboxH12" value = H13>
-<input type="checkbox", name = "check", class = "chboxH13" value = H14>
-<input type="checkbox", name = "check", class = "chboxH14" value = H15>
-<input type="checkbox", name = "check", class = "chboxH15" value = H16>
-<input type="checkbox", name = "check", class = "chboxH16" value = H17>
-<input type="checkbox", name = "check", class = "chboxH17" value = H18>
-<input type="checkbox", name = "check", class = "chboxI0" value = I1>
-<input type="checkbox", name = "check", class = "chboxI1" value = I2>
-<input type="checkbox", name = "check", class = "chboxI2" value = I3>
-<input type="checkbox", name = "check", class = "chboxI3" value = I4>
-<input type="checkbox", name = "check", class = "chboxI4" value = I5>
-<input type="checkbox", name = "check", class = "chboxI5" value = I6>
-<input type="checkbox", name = "check", class = "chboxI6" value = I7>
-<input type="checkbox", name = "check", class = "chboxI7" value = I8>
-<input type="checkbox", name = "check", class = "chboxI8" value = I9>
-<input type="checkbox", name = "check", class = "chboxI9" value = I10>
-<input type="checkbox", name = "check", class = "chboxI10" value = I11>
-<input type="checkbox", name = "check", class = "chboxI11" value = I12>
-<input type="checkbox", name = "check", class = "chboxI12" value = I13>
-<input type="checkbox", name = "check", class = "chboxI13" value = I14>
-<input type="checkbox", name = "check", class = "chboxI14" value = I15>
-<input type="checkbox", name = "check", class = "chboxI15" value = I16>
-<input type="checkbox", name = "check", class = "chboxI16" value = I17>
-<input type="checkbox", name = "check", class = "chboxI17" value = I18>
-<input type="checkbox", name = "check", class = "chboxJ0" value = J1>
-<input type="checkbox", name = "check", class = "chboxJ1" value = J2>
-<input type="checkbox", name = "check", class = "chboxJ2" value = J3>
-<input type="checkbox", name = "check", class = "chboxJ3" value = J4>
-<input type="checkbox", name = "check", class = "chboxJ4" value = J5>
-<input type="checkbox", name = "check", class = "chboxJ5" value = J6>
-<input type="checkbox", name = "check", class = "chboxJ6" value = J7>
-<input type="checkbox", name = "check", class = "chboxJ7" value = J8>
-<input type="checkbox", name = "check", class = "chboxJ8" value = J9>
-<input type="checkbox", name = "check", class = "chboxJ9" value = J10>
-<input type="checkbox", name = "check", class = "chboxJ10" value = J11>
-<input type="checkbox", name = "check", class = "chboxJ11" value = J12>
-<input type="checkbox", name = "check", class = "chboxJ12" value = J13>
-<input type="checkbox", name = "check", class = "chboxJ13" value = J14>
-<input type="checkbox", name = "check", class = "chboxJ14" value = J15>
-<input type="checkbox", name = "check", class = "chboxJ15" value = J16>
-<input type="checkbox", name = "check", class = "chboxJ16" value = J17>
-<input type="checkbox", name = "check", class = "chboxJ17" value = J18>
-<input type="checkbox", name = "check", class = "chboxK0" value = K1>
-<input type="checkbox", name = "check", class = "chboxK1" value = K2>
-<input type="checkbox", name = "check", class = "chboxK2" value = K3>
-<input type="checkbox", name = "check", class = "chboxK3" value = K4>
-<input type="checkbox", name = "check", class = "chboxK4" value = K5>
-<input type="checkbox", name = "check", class = "chboxK5" value = K6>
-<input type="checkbox", name = "check", class = "chboxK6" value = K7>
-<input type="checkbox", name = "check", class = "chboxK7" value = K8>
-<input type="checkbox", name = "check", class = "chboxK8" value = K9>
-<input type="checkbox", name = "check", class = "chboxK9" value = K10>
-<input type="checkbox", name = "check", class = "chboxK10" value = K11>
-<input type="checkbox", name = "check", class = "chboxK11" value = K12>
-<input type="checkbox", name = "check", class = "chboxK12" value = K13>
-<input type="checkbox", name = "check", class = "chboxK13" value = K14>
-<input type="checkbox", name = "check", class = "chboxK14" value = K15>
-<input type="checkbox", name = "check", class = "chboxK15" value = K16>
-<input type="checkbox", name = "check", class = "chboxK16" value = K17>
-<input type="checkbox", name = "check", class = "chboxK17" value = K18>
-<!--<table class="responsive-table-input-matrix">
-		<thead>
-		<tr>
-			<th></th>
-			<th>A</th>
-			<th>B</th>
-			<th>C</th>
-			<th>D</th>
-			<th>E</th>
-			<th>F</th>
-			<th>G</th>
-			<th>H</th>
-			<th>I</th>
-			<th>J</th>
-			<th>K</th>
-		</tr>
-		</thead>
-		<tbody>
-
-		<tr>
-			<td>18</td>
-			<td><input type="checkbox", name = "check", value = A18></td> 
-			<td><input type="checkbox", name = "check", value = B18></td> 
-			<td><input type="checkbox", name = "check", value = C18></td> 
-			<td><input type="checkbox", name = "check", value = D18></td> 
-			<td><input type="checkbox", name = "check", value = E18></td> 
-			<td><input type="checkbox", name = "check", value = F18></td> 
-			<td><input type="checkbox", name = "check", value = G18></td>
-			<td><input type="checkbox", name = "check", value = H18></td>
-			<td><input type="checkbox", name = "check", value = I18></td>
-			<td><input type="checkbox", name = "check", value = J18></td>
-			<td><input type="checkbox", name = "check", value = K18></td>
-		</tr>
-		<tr>
-			<td>17</td>
-			<td><input type="checkbox", name = "check", value = A17></td> 
-			<td><input type="checkbox", name = "check", value = B17></td> 
-			<td><input type="checkbox", name = "check", value = C17></td> 
-			<td><input type="checkbox", name = "check", value = D17></td> 
-			<td><input type="checkbox", name = "check", value = E17></td> 
-			<td><input type="checkbox", name = "check", value = F17></td> 
-			<td><input type="checkbox", name = "check", value = G17></td>
-			<td><input type="checkbox", name = "check", value = H17></td>
-			<td><input type="checkbox", name = "check", value = I17></td>
-			<td><input type="checkbox", name = "check", value = J17></td>
-			<td><input type="checkbox", name = "check", value = K17></td>
-		</tr>
-		<tr>
-			<td>16</td>
-			<td><input type="checkbox", name = "check", value = A16></td> 
-			<td><input type="checkbox", name = "check", value = B16></td> 
-			<td><input type="checkbox", name = "check", value = C16></td> 
-			<td><input type="checkbox", name = "check", value = D16></td> 
-			<td><input type="checkbox", name = "check", value = E16></td> 
-			<td><input type="checkbox", name = "check", value = F16></td> 
-			<td><input type="checkbox", name = "check", value = G16></td>
-			<td><input type="checkbox", name = "check", value = H16></td>
-			<td><input type="checkbox", name = "check", value = I16></td>
-			<td><input type="checkbox", name = "check", value = J16></td>
-			<td><input type="checkbox", name = "check", value = K16></td>
-		</tr>
-		<tr>
-			<td>15</td>
-			<td><input type="checkbox", name = "check", value = A15></td> 
-			<td><input type="checkbox", name = "check", value = B15></td> 
-			<td><input type="checkbox", name = "check", value = C15></td> 
-			<td><input type="checkbox", name = "check", value = D15></td> 
-			<td><input type="checkbox", name = "check", value = E15></td> 
-			<td><input type="checkbox", name = "check", value = F15></td> 
-			<td><input type="checkbox", name = "check", value = G15></td>
-			<td><input type="checkbox", name = "check", value = H15></td>
-			<td><input type="checkbox", name = "check", value = I15></td>
-			<td><input type="checkbox", name = "check", value = J15></td>
-			<td><input type="checkbox", name = "check", value = K15></td>
-		</tr>
-		<tr>
-			<td>14</td>
-			<td><input type="checkbox", name = "check", value = A14></td> 
-			<td><input type="checkbox", name = "check", value = B14></td> 
-			<td><input type="checkbox", name = "check", value = C14></td> 
-			<td><input type="checkbox", name = "check", value = D14></td> 
-			<td><input type="checkbox", name = "check", value = E14></td> 
-			<td><input type="checkbox", name = "check", value = F14></td> 
-			<td><input type="checkbox", name = "check", value = G14></td>
-			<td><input type="checkbox", name = "check", value = H14></td>
-			<td><input type="checkbox", name = "check", value = I14></td>
-			<td><input type="checkbox", name = "check", value = J14></td>
-			<td><input type="checkbox", name = "check", value = K14></td>
-		</tr>
-		<tr>
-			<td>13</td>
-			<td><input type="checkbox", name = "check", value = A13></td> 
-			<td><input type="checkbox", name = "check", value = B13></td> 
-			<td><input type="checkbox", name = "check", value = C13></td> 
-			<td><input type="checkbox", name = "check", value = D13></td> 
-			<td><input type="checkbox", name = "check", value = E13></td> 
-			<td><input type="checkbox", name = "check", value = F13></td> 
-			<td><input type="checkbox", name = "check", value = G13></td>
-			<td><input type="checkbox", name = "check", value = H13></td>
-			<td><input type="checkbox", name = "check", value = I13></td>
-			<td><input type="checkbox", name = "check", value = J13></td>
-			<td><input type="checkbox", name = "check", value = K13></td>
-		</tr>
-		<tr>
-			<td>12</td>
-			<td><input type="checkbox", name = "check", value = A12></td> 
-			<td><input type="checkbox", name = "check", value = B12></td> 
-			<td><input type="checkbox", name = "check", value = C12></td> 
-			<td><input type="checkbox", name = "check", value = D12></td> 
-			<td><input type="checkbox", name = "check", value = E12></td> 
-			<td><input type="checkbox", name = "check", value = F12></td> 
-			<td><input type="checkbox", name = "check", value = G12></td>
-			<td><input type="checkbox", name = "check", value = H12></td>
-			<td><input type="checkbox", name = "check", value = I12></td>
-			<td><input type="checkbox", name = "check", value = J12></td>
-			<td><input type="checkbox", name = "check", value = K12></td>
-		</tr>
-		<tr>
-			<td>11</td>
-			<td><input type="checkbox", name = "check", value = A11></td> 
-			<td><input type="checkbox", name = "check", value = B11></td> 
-			<td><input type="checkbox", name = "check", value = C11></td> 
-			<td><input type="checkbox", name = "check", value = D11></td> 
-			<td><input type="checkbox", name = "check", value = E11></td> 
-			<td><input type="checkbox", name = "check", value = F11></td> 
-			<td><input type="checkbox", name = "check", value = G11></td>
-			<td><input type="checkbox", name = "check", value = H11></td>
-			<td><input type="checkbox", name = "check", value = I11></td>
-			<td><input type="checkbox", name = "check", value = J11></td>
-			<td><input type="checkbox", name = "check", value = K11></td>
-		</tr>
-		<tr>
-			<td>10</td>
-			<td><input type="checkbox", name = "check", value = A10></td> 
-			<td><input type="checkbox", name = "check", value = B10></td> 
-			<td><input type="checkbox", name = "check", value = C10></td> 
-			<td><input type="checkbox", name = "check", value = D10></td> 
-			<td><input type="checkbox", name = "check", value = E10></td> 
-			<td><input type="checkbox", name = "check", value = F10></td> 
-			<td><input type="checkbox", name = "check", value = G10></td>
-			<td><input type="checkbox", name = "check", value = H10></td>
-			<td><input type="checkbox", name = "check", value = I10></td>
-			<td><input type="checkbox", name = "check", value = J10></td>
-			<td><input type="checkbox", name = "check", value = K10></td>
-		</tr>
-		<tr>
-			<td>9</td>
-			<td><input type="checkbox", name = "check", value = A9></td> 
-			<td><input type="checkbox", name = "check", value = B9></td> 
-			<td><input type="checkbox", name = "check", value = C9></td> 
-			<td><input type="checkbox", name = "check", value = D9></td> 
-			<td><input type="checkbox", name = "check", value = E9></td> 
-			<td><input type="checkbox", name = "check", value = F9></td> 
-			<td><input type="checkbox", name = "check", value = G9></td>
-			<td><input type="checkbox", name = "check", value = H9></td>
-			<td><input type="checkbox", name = "check", value = I9></td>
-			<td><input type="checkbox", name = "check", value = J9></td>
-			<td><input type="checkbox", name = "check", value = K9></td>
-		</tr>
-		<tr>
-			<td>8</td>
-			<td><input type="checkbox", name = "check", value = A8></td> 
-			<td><input type="checkbox", name = "check", value = B8></td> 
-			<td><input type="checkbox", name = "check", value = C8></td> 
-			<td><input type="checkbox", name = "check", value = D8></td> 
-			<td><input type="checkbox", name = "check", value = E8></td> 
-			<td><input type="checkbox", name = "check", value = F8></td> 
-			<td><input type="checkbox", name = "check", value = G8></td>
-			<td><input type="checkbox", name = "check", value = H8></td>
-			<td><input type="checkbox", name = "check", value = I8></td>
-			<td><input type="checkbox", name = "check", value = J8></td>
-			<td><input type="checkbox", name = "check", value = K8></td>
-		</tr>
-		<tr>
-			<td>7</td>
-			<td><input type="checkbox", name = "check", value = A7></td> 
-			<td><input type="checkbox", name = "check", value = B7></td> 
-			<td><input type="checkbox", name = "check", value = C7></td> 
-			<td><input type="checkbox", name = "check", value = D7></td> 
-			<td><input type="checkbox", name = "check", value = E7></td> 
-			<td><input type="checkbox", name = "check", value = F7></td> 
-			<td><input type="checkbox", name = "check", value = G7></td>
-			<td><input type="checkbox", name = "check", value = H7></td>
-			<td><input type="checkbox", name = "check", value = I7></td>
-			<td><input type="checkbox", name = "check", value = J7></td>
-			<td><input type="checkbox", name = "check", value = K7></td>
-		</tr>
-		<tr>
-			<td>6</td>
-			<td><input type="checkbox", name = "check", value = A6></td> 
-			<td><input type="checkbox", name = "check", value = B6></td> 
-			<td><input type="checkbox", name = "check", value = C6></td> 
-			<td><input type="checkbox", name = "check", value = D6></td> 
-			<td><input type="checkbox", name = "check", value = E6></td> 
-			<td><input type="checkbox", name = "check", value = F6></td> 
-			<td><input type="checkbox", name = "check", value = G6></td>
-			<td><input type="checkbox", name = "check", value = H6></td>
-			<td><input type="checkbox", name = "check", value = I6></td>
-			<td><input type="checkbox", name = "check", value = J6></td>
-			<td><input type="checkbox", name = "check", value = K6></td>
-		</tr>
-		<tr>
-			<td>5</td>
-			<td><input type="checkbox", name = "check", value = A5></td> 
-			<td><input type="checkbox", name = "check", value = B5></td> 
-			<td><input type="checkbox", name = "check", value = C5></td> 
-			<td><input type="checkbox", name = "check", value = D5></td> 
-			<td><input type="checkbox", name = "check", value = E5></td> 
-			<td><input type="checkbox", name = "check", value = F5></td> 
-			<td><input type="checkbox", name = "check", value = G5></td>
-			<td><input type="checkbox", name = "check", value = H5></td>
-			<td><input type="checkbox", name = "check", value = I5></td>
-			<td><input type="checkbox", name = "check", value = J5></td>
-			<td><input type="checkbox", name = "check", value = K5></td>
-		</tr>
-		<tr>
-			<td>4</td>
-			<td><input type="checkbox", name = "check", value = A4></td> 
-			<td><input type="checkbox", name = "check", value = B4></td> 
-			<td><input type="checkbox", name = "check", value = C4></td> 
-			<td><input type="checkbox", name = "check", value = D4></td> 
-			<td><input type="checkbox", name = "check", value = E4></td> 
-			<td><input type="checkbox", name = "check", value = F4></td> 
-			<td><input type="checkbox", name = "check", value = G4></td>
-			<td><input type="checkbox", name = "check", value = H4></td>
-			<td><input type="checkbox", name = "check", value = I4></td>
-			<td><input type="checkbox", name = "check", value = J4></td>
-			<td><input type="checkbox", name = "check", value = K4></td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td><input type="checkbox", name = "check", value = A3></td> 
-			<td><input type="checkbox", name = "check", value = B3></td> 
-			<td><input type="checkbox", name = "check", value = C3></td> 
-			<td><input type="checkbox", name = "check", value = D3></td> 
-			<td><input type="checkbox", name = "check", value = E3></td> 
-			<td><input type="checkbox", name = "check", value = F3></td> 
-			<td><input type="checkbox", name = "check", value = G3></td>
-			<td><input type="checkbox", name = "check", value = H3></td>
-			<td><input type="checkbox", name = "check", value = I3></td>
-			<td><input type="checkbox", name = "check", value = J3></td>
-			<td><input type="checkbox", name = "check", value = K3></td>
-		</tr>
-		<tr>
-			<td>2</td>
-			<td><input type="checkbox", name = "check", value = A2></td> 
-			<td><input type="checkbox", name = "check", value = B2></td> 
-			<td><input type="checkbox", name = "check", value = C2></td> 
-			<td><input type="checkbox", name = "check", value = D2></td> 
-			<td><input type="checkbox", name = "check", value = E2></td> 
-			<td><input type="checkbox", name = "check", value = F2></td> 
-			<td><input type="checkbox", name = "check", value = G2></td>
-			<td><input type="checkbox", name = "check", value = H2></td>
-			<td><input type="checkbox", name = "check", value = I2></td>
-			<td><input type="checkbox", name = "check", value = J2></td>
-			<td><input type="checkbox", name = "check", value = K2></td>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td><input type="checkbox", name = "check", value = A1></td> 
-			<td><input type="checkbox", name = "check", value = B1></td> 
-			<td><input type="checkbox", name = "check", value = C1></td> 
-			<td><input type="checkbox", name = "check", value = D1></td> 
-			<td><input type="checkbox", name = "check", value = E1></td> 
-			<td><input type="checkbox", name = "check", value = F1></td> 
-			<td><input type="checkbox", name = "check", value = G1></td>
-			<td><input type="checkbox", name = "check", value = H1></td>
-			<td><input type="checkbox", name = "check", value = I1></td>
-			<td><input type="checkbox", name = "check", value = J1></td>
-			<td><input type="checkbox", name = "check", value = K1></td>
-		</tr>
-		</tbody>
-	</table>
---!>
+<label class="checkbox checkbox-xs chboxA0">
+<input type="checkbox", name = "check", value = A1>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxA1">
+<input type="checkbox", name = "check", value = A2>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxA2">
+<input type="checkbox", name = "check", value = A3>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxA3">
+<input type="checkbox", name = "check", value = A4>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxA4">
+<input type="checkbox", name = "check", value = A5>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxA5">
+<input type="checkbox", name = "check", value = A6>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxA6">
+<input type="checkbox", name = "check", value = A7>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxA7">
+<input type="checkbox", name = "check", value = A8>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxA8">
+<input type="checkbox", name = "check", value = A9>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxA9">
+<input type="checkbox", name = "check", value = A10>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxA10">
+<input type="checkbox", name = "check", value = A11>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxA11">
+<input type="checkbox", name = "check", value = A12>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxA12">
+<input type="checkbox", name = "check", value = A13>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxA13">
+<input type="checkbox", name = "check", value = A14>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxA14">
+<input type="checkbox", name = "check", value = A15>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxA15">
+<input type="checkbox", name = "check", value = A16>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxA16">
+<input type="checkbox", name = "check", value = A17>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxA17">
+<input type="checkbox", name = "check", value = A18>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxB0">
+<input type="checkbox", name = "check", value = B1>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxB1">
+<input type="checkbox", name = "check", value = B2>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxB2">
+<input type="checkbox", name = "check", value = B3>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxB3">
+<input type="checkbox", name = "check", value = B4>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxB4">
+<input type="checkbox", name = "check", value = B5>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxB5">
+<input type="checkbox", name = "check", value = B6>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxB6">
+<input type="checkbox", name = "check", value = B7>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxB7">
+<input type="checkbox", name = "check", value = B8>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxB8">
+<input type="checkbox", name = "check", value = B9>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxB9">
+<input type="checkbox", name = "check", value = B10>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxB10">
+<input type="checkbox", name = "check", value = B11>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxB11">
+<input type="checkbox", name = "check", value = B12>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxB12">
+<input type="checkbox", name = "check", value = B13>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxB13">
+<input type="checkbox", name = "check", value = B14>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxB14">
+<input type="checkbox", name = "check", value = B15>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxB15">
+<input type="checkbox", name = "check", value = B16>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxB16">
+<input type="checkbox", name = "check", value = B17>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxB17">
+<input type="checkbox", name = "check", value = B18>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxC0">
+<input type="checkbox", name = "check", value = C1>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxC1">
+<input type="checkbox", name = "check", value = C2>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxC2">
+<input type="checkbox", name = "check", value = C3>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxC3">
+<input type="checkbox", name = "check", value = C4>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxC4">
+<input type="checkbox", name = "check", value = C5>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxC5">
+<input type="checkbox", name = "check", value = C6>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxC6">
+<input type="checkbox", name = "check", value = C7>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxC7">
+<input type="checkbox", name = "check", value = C8>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxC8">
+<input type="checkbox", name = "check", value = C9>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxC9">
+<input type="checkbox", name = "check", value = C10>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxC10">
+<input type="checkbox", name = "check", value = C11>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxC11">
+<input type="checkbox", name = "check", value = C12>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxC12">
+<input type="checkbox", name = "check", value = C13>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxC13">
+<input type="checkbox", name = "check", value = C14>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxC14">
+<input type="checkbox", name = "check", value = C15>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxC15">
+<input type="checkbox", name = "check", value = C16>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxC16">
+<input type="checkbox", name = "check", value = C17>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxC17">
+<input type="checkbox", name = "check", value = C18>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxD0">
+<input type="checkbox", name = "check", value = D1>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxD1">
+<input type="checkbox", name = "check", value = D2>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxD2">
+<input type="checkbox", name = "check", value = D3>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxD3">
+<input type="checkbox", name = "check", value = D4>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxD4">
+<input type="checkbox", name = "check", value = D5>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxD5">
+<input type="checkbox", name = "check", value = D6>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxD6">
+<input type="checkbox", name = "check", value = D7>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxD7">
+<input type="checkbox", name = "check", value = D8>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxD8">
+<input type="checkbox", name = "check", value = D9>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxD9">
+<input type="checkbox", name = "check", value = D10>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxD10">
+<input type="checkbox", name = "check", value = D11>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxD11">
+<input type="checkbox", name = "check", value = D12>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxD12">
+<input type="checkbox", name = "check", value = D13>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxD13">
+<input type="checkbox", name = "check", value = D14>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxD14">
+<input type="checkbox", name = "check", value = D15>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxD15">
+<input type="checkbox", name = "check", value = D16>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxD16">
+<input type="checkbox", name = "check", value = D17>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxD17">
+<input type="checkbox", name = "check", value = D18>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxE0">
+<input type="checkbox", name = "check", value = E1>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxE1">
+<input type="checkbox", name = "check", value = E2>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxE2">
+<input type="checkbox", name = "check", value = E3>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxE3">
+<input type="checkbox", name = "check", value = E4>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxE4">
+<input type="checkbox", name = "check", value = E5>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxE5">
+<input type="checkbox", name = "check", value = E6>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxE6">
+<input type="checkbox", name = "check", value = E7>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxE7">
+<input type="checkbox", name = "check", value = E8>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxE8">
+<input type="checkbox", name = "check", value = E9>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxE9">
+<input type="checkbox", name = "check", value = E10>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxE10">
+<input type="checkbox", name = "check", value = E11>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxE11">
+<input type="checkbox", name = "check", value = E12>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxE12">
+<input type="checkbox", name = "check", value = E13>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxE13">
+<input type="checkbox", name = "check", value = E14>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxE14">
+<input type="checkbox", name = "check", value = E15>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxE15">
+<input type="checkbox", name = "check", value = E16>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxE16">
+<input type="checkbox", name = "check", value = E17>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxE17">
+<input type="checkbox", name = "check", value = E18>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxF0">
+<input type="checkbox", name = "check", value = F1>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxF1">
+<input type="checkbox", name = "check", value = F2>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxF2">
+<input type="checkbox", name = "check", value = F3>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxF3">
+<input type="checkbox", name = "check", value = F4>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxF4">
+<input type="checkbox", name = "check", value = F5>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxF5">
+<input type="checkbox", name = "check", value = F6>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxF6">
+<input type="checkbox", name = "check", value = F7>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxF7">
+<input type="checkbox", name = "check", value = F8>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxF8">
+<input type="checkbox", name = "check", value = F9>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxF9">
+<input type="checkbox", name = "check", value = F10>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxF10">
+<input type="checkbox", name = "check", value = F11>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxF11">
+<input type="checkbox", name = "check", value = F12>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxF12">
+<input type="checkbox", name = "check", value = F13>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxF13">
+<input type="checkbox", name = "check", value = F14>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxF14">
+<input type="checkbox", name = "check", value = F15>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxF15">
+<input type="checkbox", name = "check", value = F16>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxF16">
+<input type="checkbox", name = "check", value = F17>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxF17">
+<input type="checkbox", name = "check", value = F18>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxG0">
+<input type="checkbox", name = "check", value = G1>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxG1">
+<input type="checkbox", name = "check", value = G2>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxG2">
+<input type="checkbox", name = "check", value = G3>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxG3">
+<input type="checkbox", name = "check", value = G4>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxG4">
+<input type="checkbox", name = "check", value = G5>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxG5">
+<input type="checkbox", name = "check", value = G6>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxG6">
+<input type="checkbox", name = "check", value = G7>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxG7">
+<input type="checkbox", name = "check", value = G8>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxG8">
+<input type="checkbox", name = "check", value = G9>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxG9">
+<input type="checkbox", name = "check", value = G10>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxG10">
+<input type="checkbox", name = "check", value = G11>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxG11">
+<input type="checkbox", name = "check", value = G12>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxG12">
+<input type="checkbox", name = "check", value = G13>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxG13">
+<input type="checkbox", name = "check", value = G14>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxG14">
+<input type="checkbox", name = "check", value = G15>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxG15">
+<input type="checkbox", name = "check", value = G16>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxG16">
+<input type="checkbox", name = "check", value = G17>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxG17">
+<input type="checkbox", name = "check", value = G18>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxH0">
+<input type="checkbox", name = "check", value = H1>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxH1">
+<input type="checkbox", name = "check", value = H2>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxH2">
+<input type="checkbox", name = "check", value = H3>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxH3">
+<input type="checkbox", name = "check", value = H4>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxH4">
+<input type="checkbox", name = "check", value = H5>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxH5">
+<input type="checkbox", name = "check", value = H6>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxH6">
+<input type="checkbox", name = "check", value = H7>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxH7">
+<input type="checkbox", name = "check", value = H8>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxH8">
+<input type="checkbox", name = "check", value = H9>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxH9">
+<input type="checkbox", name = "check", value = H10>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxH10">
+<input type="checkbox", name = "check", value = H11>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxH11">
+<input type="checkbox", name = "check", value = H12>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxH12">
+<input type="checkbox", name = "check", value = H13>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxH13">
+<input type="checkbox", name = "check", value = H14>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxH14">
+<input type="checkbox", name = "check", value = H15>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxH15">
+<input type="checkbox", name = "check", value = H16>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxH16">
+<input type="checkbox", name = "check", value = H17>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxH17">
+<input type="checkbox", name = "check", value = H18>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxI0">
+<input type="checkbox", name = "check", value = I1>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxI1">
+<input type="checkbox", name = "check", value = I2>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxI2">
+<input type="checkbox", name = "check", value = I3>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxI3">
+<input type="checkbox", name = "check", value = I4>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxI4">
+<input type="checkbox", name = "check", value = I5>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxI5">
+<input type="checkbox", name = "check", value = I6>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxI6">
+<input type="checkbox", name = "check", value = I7>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxI7">
+<input type="checkbox", name = "check", value = I8>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxI8">
+<input type="checkbox", name = "check", value = I9>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxI9">
+<input type="checkbox", name = "check", value = I10>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxI10">
+<input type="checkbox", name = "check", value = I11>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxI11">
+<input type="checkbox", name = "check", value = I12>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxI12">
+<input type="checkbox", name = "check", value = I13>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxI13">
+<input type="checkbox", name = "check", value = I14>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxI14">
+<input type="checkbox", name = "check", value = I15>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxI15">
+<input type="checkbox", name = "check", value = I16>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxI16">
+<input type="checkbox", name = "check", value = I17>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxI17">
+<input type="checkbox", name = "check", value = I18>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxJ0">
+<input type="checkbox", name = "check", value = J1>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxJ1">
+<input type="checkbox", name = "check", value = J2>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxJ2">
+<input type="checkbox", name = "check", value = J3>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxJ3">
+<input type="checkbox", name = "check", value = J4>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxJ4">
+<input type="checkbox", name = "check", value = J5>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxJ5">
+<input type="checkbox", name = "check", value = J6>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxJ6">
+<input type="checkbox", name = "check", value = J7>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxJ7">
+<input type="checkbox", name = "check", value = J8>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxJ8">
+<input type="checkbox", name = "check", value = J9>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxJ9">
+<input type="checkbox", name = "check", value = J10>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxJ10">
+<input type="checkbox", name = "check", value = J11>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxJ11">
+<input type="checkbox", name = "check", value = J12>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxJ12">
+<input type="checkbox", name = "check", value = J13>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxJ13">
+<input type="checkbox", name = "check", value = J14>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxJ14">
+<input type="checkbox", name = "check", value = J15>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxJ15">
+<input type="checkbox", name = "check", value = J16>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxJ16">
+<input type="checkbox", name = "check", value = J17>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxJ17">
+<input type="checkbox", name = "check", value = J18>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxK0">
+<input type="checkbox", name = "check", value = K1>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxK1">
+<input type="checkbox", name = "check", value = K2>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxK2">
+<input type="checkbox", name = "check", value = K3>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxK3">
+<input type="checkbox", name = "check", value = K4>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxK4">
+<input type="checkbox", name = "check", value = K5>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxK5">
+<input type="checkbox", name = "check", value = K6>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxK6">
+<input type="checkbox", name = "check", value = K7>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxK7">
+<input type="checkbox", name = "check", value = K8>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxK8">
+<input type="checkbox", name = "check", value = K9>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxK9">
+<input type="checkbox", name = "check", value = K10>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxK10">
+<input type="checkbox", name = "check", value = K11>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxK11">
+<input type="checkbox", name = "check", value = K12>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxK12">
+<input type="checkbox", name = "check", value = K13>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxK13">
+<input type="checkbox", name = "check", value = K14>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxK14">
+<input type="checkbox", name = "check", value = K15>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxK15">
+<input type="checkbox", name = "check", value = K16>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxK16">
+<input type="checkbox", name = "check", value = K17>
+<i class="icon-checkbox"></i>
+</label>
+<label class="checkbox checkbox-xs chboxK17">
+<input type="checkbox", name = "check", value = K18>
+<i class="icon-checkbox"></i>
+</label>
 </div>
 <!--
   <div ><h3>Where is your wedding?</h3></div>
