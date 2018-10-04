@@ -137,19 +137,17 @@ def input_to_output_app():
 		num_coord = coord(lst).transpose()
 		x_coords = num_coord[0]
 		y_coords = num_coord[1]
-		plot = figure(x_range=(1,11), y_range = (1,18),plot_width=200, plot_height=300, toolbar_location = None)
+		plot = figure(x_range=(1,11), y_range = (1,19),plot_width=300, plot_height=450, toolbar_location = None)
 		plot.add_layout(Title(text=subtitle, text_font_style="italic"), 'above')
 		plot.add_layout(Title(text=title, text_font_size="16pt"), 'above')
-		plot.xaxis.axis_label = 'x'
 		plot.xaxis.minor_tick_line_color = None
-		plot.yaxis.axis_label = 'y'
 		plot.yaxis.minor_tick_line_color = None
 		plot.xgrid.grid_line_color = 'LightGrey'
 		plot.ygrid.grid_line_color = 'LightGrey'
 		plot.xaxis[0].ticker.desired_num_ticks = 11
 		plot.yaxis[0].ticker.desired_num_ticks = 18
 		plot.xaxis.major_label_overrides = {1: 'A', 2: 'B', 3: 'C', 4:'D', 5:'E', 6:'F', 7:'G', 8: 'H', 9: 'I', 10: 'J', 11: 'K'}
-		plot.circle(x_coords,y_coords,color="#B3DE69",alpha = 1)
+		plot.circle(x_coords,y_coords,color='salmon',alpha = 1,size=8)
 		script, div = components(plot)
 		return script, div	
 	def find_user(lst,grade):
