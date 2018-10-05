@@ -227,9 +227,9 @@ def input_to_output_app():
 #	cos_sim = pred
 	cos_sim = int(input_to_output(lst))
 	[Grade_e,setter_e,holds_e,Grade_h,setter_h,holds_h] = find_user(lst,cos_sim)
-	scr_inp,div_inp = plot_coords(lst,"Grade: V%d"%(cos_sim),"User input")
-	scr_e, div_e = plot_coords(holds_e,"Grade: V%d"%(Grade_e),"Setter: %s"%(setter_e))
-	scr_h, div_h = plot_coords(holds_h,"Grade: V%d"%(Grade_h),"Setter: %s"%(setter_h))
+	scr_inp,div_inp = plot_coords(lst,"Estimated Grade: V%d"%(cos_sim),"User Input")
+	scr_e, div_e = plot_coords(holds_e,"Official Grade: V%d"%(Grade_e),"Setter: %s"%(setter_e))
+	scr_h, div_h = plot_coords(holds_h,"Official Grade: V%d"%(Grade_h),"Setter: %s"%(setter_h))
     # plot can be generated, saved as a file and loaded to html
     #return [rf2.predict(h_enc),rf2.predict_proba(h_enc)]
     #return render_template('recommendations.html', cos_sims = cos_sims, florist_info = florist_info)
